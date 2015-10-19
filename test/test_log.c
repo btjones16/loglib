@@ -1,12 +1,8 @@
-/* Standard libraries */
 #include <setjmp.h>
 #include <stdarg.h>
 #include <string.h>
 #include <sys/types.h>
 
-/* Other libraries */
-
-/* Nemo includes */
 #include "log.h"
 #include "testing_utilities.h"
 
