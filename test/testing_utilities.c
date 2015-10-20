@@ -9,9 +9,7 @@
 
 #include "testing_utilities.h"
 
-#include <cmockery.h>
-
-void check_num_lines(FILE * fid, const int num_lines) {
+void check_num_lines(FILE * fid, const int num_lines, CuTest * tc) {
   /* Rewind to the beginning of the file. */
   rewind(fid);
   /* Read each character and increment the number of lines for each \n. */
@@ -20,7 +18,7 @@ void check_num_lines(FILE * fid, const int num_lines) {
     if (ch == '\n')
       ++lines;
   /* Check the actual and expected number of lines. */
-  assert_int_equal(num_lines, lines);
+  CuAssertIntEquals(tc, num_lines, lines);
 }
 
 int count_open_files() { 

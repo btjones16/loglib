@@ -27,17 +27,13 @@ cmake ..
 make
 ```
 
-Note: CMake will most likely display an error that it cannot find the cmockery
-library at present. This is a known issue that will hopefully be resolved in a
-future release. It does not impact the functionality of the library.
-
 The default build sequence simply compiles the library, but does not install it.
 To install the library, modify the line `cmake ..` to read `cmake .. -DCMAKE_INSTALL_PREFIX=[PATH]`, where [PATH] is the name of the installation path. For instance, to install to `/usr/local`, use `cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local`. This creates an `install` target, so LogLib can be installed with `make install`.
 
 ## Testing
-Unit testing is currently provided for LogLib using the cmockery library (https://code.google.com/p/cmockery/). This is likely to result in a warning from CMake that it cannot find the cmockery framework. You will likely need to modify the makefile generated for the test code, or follow the instructions in the CMake warning to get the unit testing to work. Once the cmockery framework is installed and has been identified, the unit tests can be compiled and executed with the following commands. The unit testing is an optional, but not required, aspect of this code and the log library will work fine without it.
+Unit testing relies on the CuTest (http://cutest.sourceforge.net/) library which is packaged with this source code. To compile and run the unit tests, execute the following 2 commands.
 
 ```
 make test_log
-make test
+./test_log
 ```
