@@ -36,6 +36,6 @@ install(FILES include/log.h DESTINATION include)
 # Setup the testing.
 add_executable(test_log EXCLUDE_FROM_ALL
 			test/test_log.c test/testing_utilities.c
-			test/cutest-1.5/cutest.c src/log.c)
+			test/cutest-1.5/CuTest.c src/log.c)
 enable_testing()
 add_test(test_log test_log)
