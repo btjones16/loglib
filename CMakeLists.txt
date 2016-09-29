@@ -11,7 +11,9 @@ set(LogLib_VERSION_MAJOR 2015)
 set(LogLib_VERSION_MINOR 10)
 
 # Create a single library from the loglib source code.
-add_library(log src/log.c)
+add_library(log SHARED src/log.c)
+add_library(logstatic STATIC src/log.c)
+set_target_properties(logstatic PROPERTIES OUTPUT_NAME log)
 
 # The header files for loglib are in /include. Add this to the include path for
 # both the loglib library and external projects that use it.
